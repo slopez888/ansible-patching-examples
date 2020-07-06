@@ -1,0 +1,4 @@
+---
+# task file for 
+- include_tasks: '{{ patch_level }}_patches.yml'
+- include_tasks: 'reboot.yml'

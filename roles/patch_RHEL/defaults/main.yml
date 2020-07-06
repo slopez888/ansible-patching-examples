@@ -1,0 +1,9 @@
+---
+# defaults file 
+
+# patch_level: [none|security|full]
+patch_level: security
+
+# reboot os if updates need to
+# ospatch_reboot: [true|false]
+patch_reboot: true

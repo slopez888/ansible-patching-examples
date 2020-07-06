@@ -1,0 +1,11 @@
+---
+- name: update cache first
+  apt:
+    upgrade: dist
+    update_cache: yes
+    
+- name: installing all Ubuntu updates
+  apt:
+    name: "*"
+    state: latest
+    force_apt_get: yes

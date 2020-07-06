@@ -1,0 +1,24 @@
+---
+- hosts: "{{ patch_hosts }}"
+  name: Patch Linux hosts
+  become: yes
+  vars:
+    patch_level:
+
+  tasks:
+  - name: Patch RHEL hosts
+    include_role: 
+      name: patch_RHEL
+    when: ansible_distribution == "RedHat"
+    ignore_errors: true
+
+  - name: Patch SUSE/SLES hosts
+    include_role: 
+      name: patch_SUSE
+    when: ansible_distribution == "SLES"
+    ignore_errors: true
+
+  - name: Patch Ubuntu/Debian hosts
+    include_role: 
+      name: patch_Debian
+    when: ansible_distribution == "Debian" or ansible_distribution == "Ubuntu"

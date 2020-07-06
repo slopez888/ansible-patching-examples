@@ -1,0 +1,5 @@
+---
+- name: installing all RHEL 7 updates
+  yum:
+    name: '*'
+    state: latest

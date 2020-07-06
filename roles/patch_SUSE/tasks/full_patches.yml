@@ -1,0 +1,5 @@
+# Update all packages
+- zypper:
+    name: '*'
+    state: latest
+

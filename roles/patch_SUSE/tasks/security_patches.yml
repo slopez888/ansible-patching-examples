@@ -1,0 +1,11 @@
+# Apply all security patches
+
+- name: List security patches
+  shell: zypper list-patches --categeory security
+  register: security
+
+- debug:
+    var: security 
+
+- name: Install security updates
+  shell: zypper patch --category security
